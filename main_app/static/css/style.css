@@ -1,0 +1,11 @@
+body {
+  background-color: azure;
+}
+
+nav {
+  background-color: aqua;
+}
+
+h2, p, .card-title {
+  color: blueviolet;
+}
