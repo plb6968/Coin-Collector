@@ -2,12 +2,12 @@
 {% block content %}
 
 <h2>All Coins</h2>
-{% for coins in coins %}
+{% for coin in coins %}
   <div class="card">
     <div class="card-content">
-      <span class="card-title">{{ coins.name }}</span>
-      <p>Value: {{ coins.value }}</p>
-      <p>Rarity: {{ coins.rarity }}</p>
+      <span class="card-title">{{ coin.name }}</span>
+      <p>Value: {{ coin.value }}</p>
+      <p>Rarity: {{ coin.rarity }}</p>
     </div>
 
   </div>

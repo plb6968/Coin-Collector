@@ -15,11 +15,14 @@ RARITIES = (
 )
 # Create your models here.
 class Coin(models.Model):
-  name = models.CharField(max_length=1)
+  name = models.CharField(max_length=150)
   rarity = models.CharField(
     max_length=4,
     choices=RARITIES,
     default=RARITIES[0][0]
   )
   value = models.IntegerField()
+
+  def __str__(self):
+    return self.name
 
