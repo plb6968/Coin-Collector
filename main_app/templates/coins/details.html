@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col s6">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ coin.name }}</span>
+        <p>Rarity: {{ coin.rarity }}</p>
+        <p>Value: ${{ coin.value }}</p>
+      </div>
+      <div class="card_action">
+          <a href="{% url 'coin_update' coin.id %}">Edit</a>
+          <a href="{% url 'coin_delete' coin.id %}">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col s6">
+  <form action="{% url 'add_material' coin.id %}" method="POST">
+    {% csrf_token %}
+    {{ material_form.as_p }}
+    <input type="submit" class="btn" value="Add material">
+  </form>
+  <table class="striped">
+    <thead>
+      <tr><th>Materials</th></tr>
+    </thead>
+    <tbody>
+      {% for material in coin.material_set.all %}
+        <tr>
+          <td>{{ material.get_material_display }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<script>
+  const selectEl = document.getElementById('id_material');
+  M.FormSelect.init(selectEl);
+</script>
+{% endblock %}

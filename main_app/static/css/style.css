@@ -1,11 +1,16 @@
 body {
   background-color: azure;
+  color: rgb(16, 31, 83);
 }
 
 nav {
   background-color: aqua;
 }
 
-h2, p, .card-title {
+a {
   color: rgb(16, 31, 83);
+}
+
+a:hover {
+  background-color: aquamarine;
 }
